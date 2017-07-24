@@ -26,28 +26,38 @@ class CommentSpider(scrapy.Spider):
     start_urls = []
 
     def __init__(self):
-        conn = MySQLdb.connect(host="localhost",user="root",passwd="输入密码",db="dianpingshop",charset="utf8")
+        conn = MySQLdb.connect(host="localhost",user="root",passwd="okgoogle",db="dianpingshop",charset="utf8")
         cursor = conn.cursor()
+    
         cursor.execute("select shopurl from dianpingshop")
+
 
         urls = []
         shop_urls = []
         elems = cursor.fetchall()
+        #for elem in cursor.fetchall():
         for elem in elems:
+            #print elem
             for r in elem:
+                print "44here======"
                 print(r)
 
 
             str = r + '/review_more'
             print 'caling here++++' + str
+                #yield self.make_requests_from_url(r[0])
             shop_urls.append(str)
             urls.append(str)
 
+        #self.start_urls.append(urls[0])
         self.start_urls.append(urls[0])
         self.urls = urls[1:]
         self.shop_urls = shop_urls
+            #yield scrapy.Request(str, callback=self.parse_item)
+        #conn.commit()
         cursor.close()
         conn.close()
+        #connection.close()
 
     def deal_num(self, str):
         ans = ''
@@ -154,6 +164,7 @@ class CommentSpider(scrapy.Spider):
 
             for li in new_list:
 
+
                 item['shop_id'] = id
                 item['_id'] = li['data-id']
                 try:
@@ -185,16 +196,32 @@ class CommentSpider(scrapy.Spider):
                     rsts = user_info.find('div', class_='comment-rst').find_all('span', class_='rst')
                     #temp = site.xpath('//div[2]/div[1]/div/span[1]').extract()
                     tp = self.deal_num(rsts[0].get_text().encode('utf-8'))
-
+                    #print "temp========="
+                    #print temp[0]
+                    #print rsts[0].get_text().encode('utf-8')
+                    #print tp
+                    #print tp[-1]
+                    #markup = filter(lambda ch: ch in '0123456789', temp[0])
+                    #print 'shoplevel=======' + shoplevels[0]
+                    #item['label_1'] = int(markup)/10
+                    #item['label_1'] = 1
+                    #print "dict====" + dict()
+                    #print "tp======" + tp
+                    #print tp[0]
+                    #print tp[-1]
                     item['label_1'] = tp[-1]
-
+                    #item['label_1'] = dict()
+                    #item['label_1'][tp[0]] = tp[-1]
+                    print "test here219"
 
                     tp = self.deal_num(rsts[1].get_text().encode('utf-8'))
-
+                    #item['label_2'] = dict()
+                    #item['label_2'][tp[0]] = tp[1]
                     item['label_2'] = tp[-1]
 
                     tp = self.deal_num(rsts[2].get_text().encode('utf-8'))
-
+                    #item['label_3'] = dict()
+                    #item['label_3'][tp[0]] = tp[1]
                     item['label_3'] = tp[-1]
                 except:
                     item['label_1'] = ''

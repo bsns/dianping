@@ -1,10 +1,12 @@
+#coding=utf-8
 # -*- coding : utf-8-*-
+#! python3
 from dianping.items import DianpingItem
 from scrapy.spiders import Spider
 from scrapy.selector import Selector
 from scrapy import Request
 import sys
-#尝试抓取扬州地区美食类商家
+
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -25,7 +27,7 @@ class dianpingspider(Spider):
     #    open(filename, 'wb').write(response.body)
 
     def start_requests(self):
-        url = 'http://www.dianping.com/search/category/12/10/p1'
+        url = 'http://www.dianping.com/search/category/12/10/o3'
         yield Request(url, headers=self.headers)
 
     def parse(self, response):
@@ -53,7 +55,11 @@ class dianpingspider(Spider):
 
             avgcost = site.xpath('div[2]/div[2]/a[2]/b/text()').extract()
             if len(avgcost) > 0:
-                item['avgcost'] = avgcost[0]
+                #print avgcost[0]
+                #print avgcost[0].lstrip('￥')
+                #print int(avgcost[0].lstrip('￥'))
+                #item['avgcost'] = avgcost[0]
+                item['avgcost'] = int(avgcost[0].lstrip('￥'))
             else:
                 item['avgcost'] = '0'
 
@@ -89,15 +95,8 @@ class dianpingspider(Spider):
 
         if nextLink:
             print nextLink[0]
-            nextLink = 'http://www.dianping.com/search/category/12/10/p' + nextLink[0]
+            nextLink = 'http://www.dianping.com/search/category/12/10/o3p' + nextLink[0]
             #reallink = str(response.url)
             print nextLink
             #reallink = nextLink
             yield Request(nextLink, headers=self.headers)
-
-        #next_url = response.xpath('//div[@class="page"]/a/@data-ga-page').extract()
-        #print '777'
-        #print next_url
-            #if next_url:
-            #next_url = 'https://http://www.dianping.com/search/category/12/10/' + next_url[0]
-            #yield Request(next_url, headers=self.headers)
