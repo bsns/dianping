@@ -8,7 +8,7 @@ scrapy抓取数据存储至本地mysql数据库
 ------
 <br>
 1.首先创建MySQl数据库
-![image](https://github.com/bsns/dianping/tree/master/images/1.png)
+![1](https://github.com/bsns/dianping/tree/master/images/1.png)
 比如选择6，创建程序用的所有表格
 ![image](https://github.com/bsns/dianping/tree/master/images/2.png)
 <br>
