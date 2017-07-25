@@ -1,3 +1,57 @@
 # dianping
 scrapy抓取数据存储至本地mysql数据库
 基于python开发，采用scrapy，数据存储至本地数据库（或excel表格）
+程序的主要目的是完成抓取和分析的任务同时学习爬虫相关知识，所以在细节处理上略有不足，但考虑到最终的目的是记录自己的学习，另外帮助到他人学习，所以这些细节无关紧要（毕竟不是面向用户的程序）。
+程序还有建立商家-用户点评的表格还在进行中...
+<br>
+一次抓取
+------
+<br>
+1.首先创建MySQl数据库
+![image](/images/1.png)
+比如选择6，创建程序用的所有表格
+![image](/images/2.png)
+<br>
+2.根据Scrapy的常用语法抓取数据
+<br>
+比如运行scrapy crawl dianping抓取扬州地区前50页的数据
+<br>
+![image](/images/3.png)
+<br>
+抓取的数据存储在本地MySQL数据库中，当然之后也可以转换成Excel表格
+<br>
+![image](/images/4.png)
+二次抓取
+------
+用户选择某种种类继续抓取（考虑到日常生活中，人类大多数会从某一种类中选择某一商家）
+![image](/images/5.png)
+在已经抓取的yangzhoushop总选择所有种类为自助餐的数据，存入dianping表中，等待继续抓取
+![image](/images/6.png)
+运行Scrapy crawl comment抓取点评内容，和点评人的具体信息
+![image](/images/7.png)
+转格式
+-----
+运行transfer.py把数据从MySQL中导出到Excel表格中
+![image](/images/8.png)
+![image](/images/9.png)
+分析
+---
+运行yz.py 生成地理位置的条形图（这一步骤是刚开始学习时编写的，所以数据是写定的）
+![image](/images/10.png)
+运行price.py显示价格相关的条形图
+<br>
+根据横轴的价格增长，三条曲线分别为
+<br>1）红色：消费人数
+<br>2）蓝色：商店数量
+<br>3）黄色：评分
+![image](/images/11.png)
+运行gender.py
+<br>显示男女比例，vip、非vip的比例
+![image](/images/12.png)
+运行user_location.py显示用户地理位置的分布图
+![image](/images/13.png)
+运行analy_shop.py分析具体商家
+![image](/images/14.png)
+程序显示几家商店，从中继续选择某一家分析
+<br>生成词云
+![image](/images/15.png)
