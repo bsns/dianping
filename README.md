@@ -42,7 +42,8 @@ scrapy抓取数据存储至本地mysql数据库
 
 ![image](https://raw.githubusercontent.com/bsns/dianping/master/images/8.png)
 ![image](https://raw.githubusercontent.com/bsns/dianping/master/images/9.png)
-分析
+
+<br>分析<br>
 ---
 运行yz.py 生成地理位置的条形图（这一步骤是刚开始学习时编写的，所以数据是写定的）
 
