@@ -17,24 +17,20 @@ scrapy抓取数据存储至本地mysql数据库
 <br>
 比如运行scrapy crawl dianping抓取扬州地区前50页的数据
 <br>
-
 ![image](https://raw.githubusercontent.com/bsns/dianping/master/images/3.png)
 
 抓取的数据存储在本地MySQL数据库中，当然之后也可以转换成Excel表格
-
 ![image](https://raw.githubusercontent.com/bsns/dianping/master/images/4.png)
+
 二次抓取
 ------
 用户选择某种种类继续抓取（考虑到日常生活中，人类大多数会从某一种类中选择某一商家）
-
 ![image](https://raw.githubusercontent.com/bsns/dianping/master/images/5.png)
 
 在已经抓取的yangzhoushop总选择所有种类为自助餐的数据，存入dianping表中，等待继续抓取
-
 ![image](https://raw.githubusercontent.com/bsns/dianping/master/images/6.png)
 
 运行Scrapy crawl comment抓取点评内容，和点评人的具体信息
-
 ![image](https://raw.githubusercontent.com/bsns/dianping/master/images/7.png)
 转格式
 -----
@@ -56,12 +52,14 @@ scrapy抓取数据存储至本地mysql数据库
 <br>2）蓝色：商店数量
 <br>3）黄色：评分
 ![image](https://raw.githubusercontent.com/bsns/dianping/master/images/11.png)
+
 <br>运行gender.py
 <br>显示男女比例，vip、非vip的比例
 ![image](https://raw.githubusercontent.com/bsns/dianping/master/images/12.png)
 
 <br>运行user_location.py显示用户地理位置的分布图
 ![image](https://raw.githubusercontent.com/bsns/dianping/master/images/13.png)
+
 <br>运行analy_shop.py分析具体商家<br>
 ![image](https://raw.githubusercontent.com/bsns/dianping/master/images/14.png)
 
