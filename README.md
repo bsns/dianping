@@ -55,15 +55,15 @@ scrapy抓取数据存储至本地mysql数据库
 <br>2）蓝色：商店数量
 <br>3）黄色：评分
 ![image](https://raw.githubusercontent.com/bsns/dianping/master/images/11.png)
-运行gender.py
+<br>运行gender.py
 <br>显示男女比例，vip、非vip的比例
 ![image](https://raw.githubusercontent.com/bsns/dianping/master/images/12.png)
 
 <br>运行user_location.py显示用户地理位置的分布图
 ![image](https://raw.githubusercontent.com/bsns/dianping/master/images/13.png)
-<br>运行analy_shop.py分析具体商家
+<br>运行analy_shop.py分析具体商家<br>
 ![image](https://raw.githubusercontent.com/bsns/dianping/master/images/14.png)
 
 <br>程序显示几家商店，从中继续选择某一家分析
-<br>生成词云
+<br>生成词云<br>
 ![image](https://raw.githubusercontent.com/bsns/dianping/master/images/15.png)
