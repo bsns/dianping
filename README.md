@@ -4,6 +4,15 @@ scrapy抓取数据存储至本地mysql数据库
 程序的主要目的是完成抓取和分析的任务同时学习爬虫相关知识，所以在细节处理上略有不足，但考虑到最终的目的是记录自己的学习，另外帮助到他人学习，所以这些细节无关紧要（毕竟不是面向用户的程序）。
 程序还有建立商家-用户点评的表格还在进行中...
 
+也许你可以在这里找到一些帮助，比如：一次返回两个，多个item，切割中文，中文转数字等问题
+
+<br> 1）一次返回两个、多个item
+在pipelines.py文件中，可以看到。如果是不同的spider返回的，直接根据spider的name来判断即可
+<br> elif isinstance(item, User_shopItem):
+
+<br> 而一个spider返回两个、多个item，则通过item的name来判断（item的名字可以在spider中调试并输出）
+<br> if str(str1) == "<class 'dianping.items.CommentItem'>":
+
 一次抓取
 ------
 1.首先创建MySQl数据库
