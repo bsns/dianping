@@ -10,12 +10,17 @@ scrapy抓取数据存储至本地mysql数据库
 在pipelines.py文件中，可以看到。如果是不同的spider返回的，直接根据spider的name来判断即可
 <br> elif isinstance(item, User_shopItem):
 
-<br> 而一个spider返回两个、多个item，则通过item的name来判断（item的名字可以在spider中调试并输出）
+<br> 2)而一个spider返回两个、多个item，则通过item的name来判断（item的名字可以在spider中调试并输出）
 <br> if str(str1) == "<class 'dianping.items.CommentItem'>":
 
 一次抓取
 ------
 1.首先创建MySQl数据库
+<br>在/dianping/settings.py中写定了
+<br>MYSQL_DBNAME = 'dianpingshop'
+<br>MYSQL_USER = 'root'
+<br>MYSQL_PASSWD = 'okgoogle'
+<br>当然你也可以修改     
 ![1](https://raw.githubusercontent.com/bsns/dianping/master/images/1.png)
 
 比如选择6，创建程序用的所有表格
