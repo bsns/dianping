@@ -39,7 +39,6 @@ class CommentSpider(scrapy.Spider):
         for elem in elems:
             #print elem
             for r in elem:
-                print "44here======"
                 print(r)
 
 
@@ -79,7 +78,6 @@ class CommentSpider(scrapy.Spider):
         soup = BeautifulSoup(temp, from_encoding='utf-8')
         item = UserItem()
         str1 = response.url
-        print "1111111111111"
 
         id = ''
         for ch in str1:
@@ -173,7 +171,6 @@ class CommentSpider(scrapy.Spider):
                     item['user_id'] = ''
 
                 home = self.user_home + item['user_id']
-                print response.url + '   here'
                 yield Request(home, callback=self.user)
 
                 try:
@@ -192,7 +189,6 @@ class CommentSpider(scrapy.Spider):
                     item['stars'] = ''
 
                 try:
-                    print "202here============="
                     rsts = user_info.find('div', class_='comment-rst').find_all('span', class_='rst')
                     #temp = site.xpath('//div[2]/div[1]/div/span[1]').extract()
                     tp = self.deal_num(rsts[0].get_text().encode('utf-8'))
@@ -212,7 +208,6 @@ class CommentSpider(scrapy.Spider):
                     item['label_1'] = tp[-1]
                     #item['label_1'] = dict()
                     #item['label_1'][tp[0]] = tp[-1]
-                    print "test here219"
 
                     tp = self.deal_num(rsts[1].get_text().encode('utf-8'))
                     #item['label_2'] = dict()
