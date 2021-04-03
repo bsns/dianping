@@ -72,7 +72,6 @@ class DianpingPipeline(object):
         #    print 'User_shopItem'
         elif spider.name == 'comment':
             str1 = type(item)
-            print "type=======" + str(str1)
             if str(str1) == "<class 'dianping.items.CommentItem'>":
                 query=self.dbpool.runInteraction(self._conditional_insert_Comment,item)#调用插入的方法
                 query.addErrback(self._handle_error,item,spider)

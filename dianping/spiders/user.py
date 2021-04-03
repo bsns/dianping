@@ -29,7 +29,6 @@ class dianpingspider(Spider):
         cursor = conn.cursor()
         cursor.execute('SELECT _id FROM user;')
         print cursor.execute("SELECT _id FROM user")
-        print "38================"
         rows = cursor.fetchall()
 
         for row in rows:
@@ -52,7 +51,6 @@ class dianpingspider(Spider):
         #print sel.xpath('//div[@id="J_review"]')
         for site in sites:
             print site
-            print "42-----------"
             #print site.xpath('//div/div[1]/h6/a/text()').extract()
             title = site.xpath('div/div[1]/h6/a/text()').extract()
             item['shopname'] = title[0]
