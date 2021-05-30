@@ -75,13 +75,11 @@ class DianpingPipeline(object):
             if str(str1) == "<class 'dianping.items.CommentItem'>":
                 query=self.dbpool.runInteraction(self._conditional_insert_Comment,item)#调用插入的方法
                 query.addErrback(self._handle_error,item,spider)
-                print item
-                print 'CommentItem'
+
             else:
                 query=self.dbpool.runInteraction(self._conditional_insert_User,item)#调用插入的方法
                 query.addErrback(self._handle_error,item,spider)
-                print item
-                print 'itemuser'
+
 
         return item
 

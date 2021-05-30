@@ -55,9 +55,6 @@ class dianpingspider(Spider):
 
             avgcost = site.xpath('div[2]/div[2]/a[2]/b/text()').extract()
             if len(avgcost) > 0:
-                #print avgcost[0]
-                #print avgcost[0].lstrip('￥')
-                #print int(avgcost[0].lstrip('￥'))
                 #item['avgcost'] = avgcost[0]
                 item['avgcost'] = int(avgcost[0].lstrip('￥'))
             else:

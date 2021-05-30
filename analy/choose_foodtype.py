@@ -7,7 +7,7 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 def scrapy_type(foodtype):
-    db = MySQLdb.connect("localhost","root","okgoogle","dianpingshop" ,charset='utf8')
+    db = MySQLdb.connect("localhost","root","yourpassword","dianpingshop" ,charset='utf8')
     cursor = db.cursor()
     #cursor.execute('insert into dianpingshopx (select * from dianpingshop where foodtype = "自助餐") ;')
     #cursor.execute('insert into dianpingshopx (select * from dianpingshop where foodtype = %s' %(foodtype))

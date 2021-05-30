@@ -1,7 +1,7 @@
 
 def createdianpingshop():
     import MySQLdb
-    conn = MySQLdb.connect(host='127.0.0.1', user='root', passwd='okgoogle', charset="utf8")
+    conn = MySQLdb.connect(host='127.0.0.1', user='root', passwd='yourpassword', charset="utf8")
     cursor=conn.cursor()
     cursor.execute("""create database if not exists dianpingshop""")
     conn.select_db('dianpingshop')
@@ -24,7 +24,7 @@ def createdianpingshop():
 
 def create_user():
     import MySQLdb
-    conn = MySQLdb.connect(host='127.0.0.1', user='root', passwd='okgoogle', charset="utf8")
+    conn = MySQLdb.connect(host='127.0.0.1', user='root', passwd='yourpassword', charset="utf8")
     cursor=conn.cursor()
     conn.select_db('dianpingshop')
     sql = """CREATE TABLE user (
@@ -42,7 +42,7 @@ def create_user():
 
 def create_pagecomment():
     import MySQLdb
-    conn = MySQLdb.connect(host='127.0.0.1', user='root', passwd='okgoogle', charset="utf8")
+    conn = MySQLdb.connect(host='127.0.0.1', user='root', passwd='yourpassword', charset="utf8")
     cursor=conn.cursor()
     conn.select_db('dianpingshop')
     sql = """CREATE TABLE pagecomment (
@@ -64,7 +64,7 @@ def create_pagecomment():
 
 def create_user_list_shop():
     import MySQLdb
-    conn = MySQLdb.connect(host='127.0.0.1', user='root', passwd='okgoogle', charset="utf8")
+    conn = MySQLdb.connect(host='127.0.0.1', user='root', passwd='yourpassword', charset="utf8")
     cursor=conn.cursor()
     conn.select_db('dianpingshop')
     sql = """CREATE TABLE user_shop (
@@ -79,7 +79,7 @@ def create_user_list_shop():
 
 def createyangzhoushop():
     import MySQLdb
-    conn = MySQLdb.connect(host='127.0.0.1', user='root', passwd='okgoogle', charset="utf8")
+    conn = MySQLdb.connect(host='127.0.0.1', user='root', passwd='yourpassword', charset="utf8")
     cursor=conn.cursor()
     #cursor.execute("""create database if not exists dianpingshop""")
     conn.select_db('dianpingshop')

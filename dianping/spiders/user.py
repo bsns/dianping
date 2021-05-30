@@ -25,7 +25,7 @@ class dianpingspider(Spider):
 
 
     def start_requests(self):
-        conn = MySQLdb.connect(user='root', passwd='okgoogle', db='dianpingshop', host='localhost', charset="utf8", use_unicode=True)
+        conn = MySQLdb.connect(user='root', passwd='yourpassword', db='dianpingshop', host='localhost', charset="utf8", use_unicode=True)
         cursor = conn.cursor()
         cursor.execute('SELECT _id FROM user;')
         print cursor.execute("SELECT _id FROM user")

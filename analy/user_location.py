@@ -8,7 +8,7 @@ import time
 
 import MySQLdb
 
-db = MySQLdb.connect("localhost","root","okgoogle","dianpingshop",charset='utf8' )
+db = MySQLdb.connect("localhost","root","yourpassword","dianpingshop",charset='utf8' )
 
 cursor = db.cursor()
 cursor.execute("select city, count(*) from user group by city order by count(*) desc;")

@@ -5,7 +5,7 @@ import MySQLdb
 import os
 
 def seek_num(key, content, pr_value, af_value):
-    db = MySQLdb.connect("localhost","root","okgoogle","dianpingshop" )
+    db = MySQLdb.connect("localhost","root","yourpassword","dianpingshop" )
     cursor = db.cursor()
     cursor.execute('select %s from yangzhoushop where %s between %s and %s' %(key,content,pr_value,af_value))
     results = cursor.fetchall()

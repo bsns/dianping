@@ -9,7 +9,7 @@ import sys;
 reload(sys);
 def analy_shop(shop_id):
     sys.setdefaultencoding('utf8');
-    db = MySQLdb.connect(host="localhost", user="root", passwd="okgoogle", db="dianpingshop",charset='utf8')
+    db = MySQLdb.connect(host="localhost", user="root", passwd="yourpassword", db="dianpingshop",charset='utf8')
     cursor = db.cursor()
     sql = """select distinct content from pagecomment where shop_id = %s ;""" %shop_id
     tweets = open("keywords.txt", "w")

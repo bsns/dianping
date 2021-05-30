@@ -25,7 +25,7 @@ if __name__ == '__main__':
     #x = excel_read('/home/bsns/Music/add/demo.xls','haha',1,4)
     #print x
     #excel_create('first', 99, 1, 1)
-    conn = MySQLdb.connect(user='root', passwd='okgoogle', db='dianpingshop', host='localhost', charset="utf8", use_unicode=True)
+    conn = MySQLdb.connect(user='root', passwd='yourpassword', db='dianpingshop', host='localhost', charset="utf8", use_unicode=True)
     cursor = conn.cursor()
     cursor.execute('SELECT _id FROM user_table_shop;')
     rows = cursor.fetchall()

@@ -5,7 +5,7 @@ import MySQLdb
 
 
 def seek_num(key, label, af_value):
-    db = MySQLdb.connect("localhost","root","okgoogle","dianpingshop" )
+    db = MySQLdb.connect("localhost","root","yourpassword","dianpingshop" )
     cursor = db.cursor()
     cursor.execute('select %s from user where %s = %s' %(key,label,af_value))
     results = cursor.fetchall()

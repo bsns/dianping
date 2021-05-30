@@ -9,7 +9,7 @@ import sys;
 reload(sys);
 def analy_shop(shop_id):
     sys.setdefaultencoding('utf8');
-    db = MySQLdb.connect(host="localhost", user="root", passwd="okgoogle", db="dianpingshop",charset='utf8')
+    db = MySQLdb.connect(host="localhost", user="root", passwd="yourpassword", db="dianpingshop",charset='utf8')
     cursor = db.cursor()
     sql = """select distinct content from pagecomment where shop_id = %s ;""" %shop_id
     tweets = open("keywords.txt", "w")
@@ -22,7 +22,7 @@ def analy_shop(shop_id):
 
 
 def seek_num(key, af_value):
-    db = MySQLdb.connect("localhost","root","okgoogle","dianpingshop" )
+    db = MySQLdb.connect("localhost","root","yourpassword","dianpingshop" )
     cursor = db.cursor()
     cursor.execute('select shopurl from dianpingshop order by %s desc limit %s' %(key,af_value))
     results = cursor.fetchall()

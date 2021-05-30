@@ -26,7 +26,7 @@ class CommentSpider(scrapy.Spider):
     start_urls = []
 
     def __init__(self):
-        conn = MySQLdb.connect(host="localhost",user="root",passwd="okgoogle",db="dianpingshop",charset="utf8")
+        conn = MySQLdb.connect(host="localhost",user="root",passwd="yourpassword",db="dianpingshop",charset="utf8")
         cursor = conn.cursor()
     
         cursor.execute("select shopurl from dianpingshop")
@@ -192,19 +192,7 @@ class CommentSpider(scrapy.Spider):
                     rsts = user_info.find('div', class_='comment-rst').find_all('span', class_='rst')
                     #temp = site.xpath('//div[2]/div[1]/div/span[1]').extract()
                     tp = self.deal_num(rsts[0].get_text().encode('utf-8'))
-                    #print "temp========="
-                    #print temp[0]
-                    #print rsts[0].get_text().encode('utf-8')
-                    #print tp
-                    #print tp[-1]
-                    #markup = filter(lambda ch: ch in '0123456789', temp[0])
-                    #print 'shoplevel=======' + shoplevels[0]
-                    #item['label_1'] = int(markup)/10
-                    #item['label_1'] = 1
-                    #print "dict====" + dict()
-                    #print "tp======" + tp
-                    #print tp[0]
-                    #print tp[-1]
+
                     item['label_1'] = tp[-1]
                     #item['label_1'] = dict()
                     #item['label_1'][tp[0]] = tp[-1]

@@ -6,7 +6,7 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 def export_mysqltable_xls(choice):
-    conn = MySQLdb.connect('localhost','root','okgoogle','dianpingshop',charset='utf8')
+    conn = MySQLdb.connect('localhost','root','yourpassword','dianpingshop',charset='utf8')
     cursor = conn.cursor()
     global tablename
     if choice == 1:

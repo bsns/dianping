@@ -19,7 +19,7 @@ scrapy抓取数据存储至本地mysql数据库
 <br>在/dianping/settings.py中写定了
 <br>MYSQL_DBNAME = 'dianpingshop'
 <br>MYSQL_USER = 'root'
-<br>MYSQL_PASSWD = 'okgoogle'
+<br>MYSQL_PASSWD = 'yourpassword'
 <br>当然你也可以修改     
 ![1](https://raw.githubusercontent.com/bsns/dianping/master/images/1.png)
 

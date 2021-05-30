@@ -21,7 +21,7 @@ def excel_read(doc,table,x,y):
      return table.cell(x,y).value
 
 if __name__ == '__main__':
-    conn = MySQLdb.connect(user='root', passwd='okgoogle', db='dianpingshop', host='localhost', charset="utf8", use_unicode=True)
+    conn = MySQLdb.connect(user='root', passwd='yourpassword', db='dianpingshop', host='localhost', charset="utf8", use_unicode=True)
     cursor = conn.cursor()
     i = 1
     file = xlwt.Workbook()
